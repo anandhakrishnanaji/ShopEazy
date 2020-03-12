@@ -11,7 +11,7 @@ class ProductDetail extends StatelessWidget {
     final loadedProduct = prod.item.firstWhere((val) => val.id == id);
     return Scaffold(
       appBar: AppBar(
-        title: Text('Product Detail'),
+        title: const Text('Product Detail'),
       ),
       body: SingleChildScrollView(
         child: Center(
@@ -24,19 +24,19 @@ class ProductDetail extends StatelessWidget {
                 child: Image.network(loadedProduct.image),
               ),
               Padding(
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 child: Text(
                   '${loadedProduct.name}             \$${loadedProduct.price.toString()}',
-                  style: TextStyle(fontSize: 30, color: Colors.black),
+                  style: const TextStyle(fontSize: 30, color: Colors.black),
                   textAlign: TextAlign.start,
                 ),
               ),
-              Text(
+              const Text(
                 'Description',
                 style: TextStyle(fontSize: 25, color: Colors.black),
               ),
               Container(
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 child: Text(loadedProduct.description),
                 height: 200,
                 width: 200,

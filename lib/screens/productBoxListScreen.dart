@@ -24,15 +24,15 @@ class _CategoriesState extends State<ProdListScreen> {
     final prod = Provider.of<Products>(context);
     return Scaffold(
         floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.add),
+          child: const Icon(Icons.add),
           onPressed: () => Navigator.of(context)
               .pushNamed(EditProductScreen.routeName, arguments: null),
         ),
         appBar: AppBar(
-          title: Text('Create / Manage Product'),
+          title: const Text('Create / Manage Product'),
         ),
         body: (prod.item.length <= 0)
-            ? Text(
+            ? const Text(
                 'No Products Added',
                 style: TextStyle(fontSize: 30),
               )

@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import './loginscreen.dart';
 import '../providers/ProductProvider.dart';
 import 'package:provider/provider.dart';
-import '../screens/productBoxListScreen.dart';
-
-//import './about.dart';
+import './productBoxListScreen.dart';
+import './aboutscreen.dart';
 
 class Mainscrn extends StatelessWidget {
   static final routeName = '/mainscrn';
@@ -16,14 +15,14 @@ class Mainscrn extends StatelessWidget {
         Container(
             decoration: new BoxDecoration(
                 image: new DecorationImage(
-                    image: NetworkImage(
+                    image: const NetworkImage(
                         'https://images.unsplash.com/photo-1582247854288-d12c8a2d9acb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=564&q=80'),
                     fit: BoxFit.cover))),
         Center(
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-              SizedBox(
+              const SizedBox(
                 height: 50,
               ),
               FlatButton(
@@ -35,12 +34,10 @@ class Mainscrn extends StatelessWidget {
                 onPressed: () =>
                     Navigator.of(context).pushNamed(ProdListScreen.routeName),
               ),
-              SizedBox(
-                height: 20,
+              const SizedBox(
+                height: 40,
               ),
-              SizedBox(
-                height: 20,
-              ),
+              
               FlatButton(
                 child: Text(
                   'LOGOUT',
@@ -55,29 +52,28 @@ class Mainscrn extends StatelessWidget {
       drawer: Drawer(
         child: Column(
           children: <Widget>[
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
             Container(
               child: Text(
                 'Welcome ${prod.username}',
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 30,
                   fontFamily: 'Segoe',
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             GestureDetector(
-              onTap: () => {},
-              //Navigator.of(context).pushNamed(Login2.routeName),
+              onTap: () => Navigator.of(context).pushNamed(Login2.routeName),
               child: Container(
-                padding: EdgeInsets.symmetric(vertical: 10),
-                child: Text(
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                child: const Text(
                   'How to Use ',
-                  style: TextStyle(
+                  style: const TextStyle(
                       fontSize: 28,
                       fontFamily: 'Segoe',
                       fontWeight: FontWeight.bold),
@@ -85,10 +81,10 @@ class Mainscrn extends StatelessWidget {
               ),
             ),
             Container(
-              padding: EdgeInsets.symmetric(vertical: 10),
-              child: Text(
+              padding: const EdgeInsets.symmetric(vertical: 10),
+              child: const Text(
                 'About',
-                style: TextStyle(
+                style: const TextStyle(
                     fontSize: 28,
                     fontFamily: 'Segoe',
                     fontWeight: FontWeight.bold),
@@ -98,17 +94,17 @@ class Mainscrn extends StatelessWidget {
         ),
       ),
       appBar: AppBar(
-        title: Text('Home'),
+        title:const Text('Home'),
         actions: <Widget>[
           PopupMenuButton(
             onSelected: (int selectedValue) =>
                 Navigator.of(context).pushReplacementNamed(LoginPage.routeName),
-            icon: Icon(
+            icon: const Icon(
               Icons.more_vert,
             ),
             itemBuilder: (_) => [
               PopupMenuItem(
-                child: Text('Log Out'),
+                child: const Text('Log Out'),
                 value: 0,
               ),
             ],

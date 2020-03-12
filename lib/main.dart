@@ -9,6 +9,7 @@ import './screens/mainscreen.dart';
 import './screens/productBoxListScreen.dart';
 import './screens/productovrscreen.dart';
 import './screens/producteditscreen.dart';
+import './screens/aboutscreen.dart';
 
 void main() => runApp(MyApp());
 
@@ -30,7 +31,8 @@ class MyApp extends StatelessWidget {
             Mainscrn.routeName: (ctx) => Mainscrn(),
             ProdListScreen.routeName: (ctx) => ProdListScreen(),
             ProductDetail.routeName: (ctx) => ProductDetail(),
-            EditProductScreen.routeName: (ctx) => EditProductScreen()
+            EditProductScreen.routeName: (ctx) => EditProductScreen(),
+            Login2.routeName: (ctx) => Login2()
           },
           theme: ThemeData(
               primarySwatch: Colors.purple,

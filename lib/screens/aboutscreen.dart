@@ -6,7 +6,7 @@ class Login2 extends StatelessWidget {
     String text,
   ) {
     return Container(
-        padding: EdgeInsets.only(top: 55),
+        padding: const EdgeInsets.only(top: 55),
         child: Text(
           text,
           style: TextStyle(
