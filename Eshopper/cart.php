@@ -187,7 +187,7 @@
 
 							$url = 'https://rest.nexmo.com/sms/json?' . http_build_query([
 								'api_key' => 'aa5758c3',
-								'api_secret' => 'EpDB9czJcaoSq0ne',
+								'api_secret' => '############0ne',
 								'to' => "$mobile",
 								'from' => 'Nexmo',
 								'text' => "$text_message"
