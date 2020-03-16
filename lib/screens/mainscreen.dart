@@ -37,7 +37,6 @@ class Mainscrn extends StatelessWidget {
               const SizedBox(
                 height: 40,
               ),
-              
               FlatButton(
                 child: Text(
                   'LOGOUT',
@@ -94,11 +93,39 @@ class Mainscrn extends StatelessWidget {
         ),
       ),
       appBar: AppBar(
-        title:const Text('Home'),
+        title: const Text('Home'),
         actions: <Widget>[
           PopupMenuButton(
-            onSelected: (int selectedValue) =>
-                Navigator.of(context).pushReplacementNamed(LoginPage.routeName),
+            onSelected: (int selectedValue) {
+              if (selectedValue == 0)
+                Navigator.of(context).pushReplacementNamed(LoginPage.routeName);
+              else {
+                showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                          actions: <Widget>[
+                            FlatButton(
+                              child: Text(
+                                'OK',
+                                style: TextStyle(
+                                    color: Theme.of(context).primaryColor),
+                              ),
+                              onPressed: () => Navigator.of(context).pop(),
+                            )
+                          ],
+                          title: Text(
+                            "Your Site link",
+                            textAlign: TextAlign.center,
+                          ),
+                          content: SelectableText(
+                            "192.168.1.22/Eshopper/index.php?username=${prod.username}",
+                            textAlign: TextAlign.center,
+                          ),
+                          contentPadding: EdgeInsets.all(60.0),
+                         // shape: CircleBorder(),
+                        ));
+              }
+            },
             icon: const Icon(
               Icons.more_vert,
             ),
@@ -106,6 +133,10 @@ class Mainscrn extends StatelessWidget {
               PopupMenuItem(
                 child: const Text('Log Out'),
                 value: 0,
+              ),
+              PopupMenuItem(
+                child: const Text('View your Website'),
+                value: 1,
               ),
             ],
           )
